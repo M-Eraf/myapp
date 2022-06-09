@@ -32,10 +32,8 @@ router.post('/about', function(req, res, next) {
       con.query(sql1, function (err, result) {
         if (err) throw err;
         console.log(result);
-
       });
 res.json({"Name":req.body})
-res.send('data submitted')
 });
 
 module.exports = router;
