@@ -12,7 +12,7 @@ var con = mysql.createConnection({
 router.get('/', function(req, res, next) {
     con.connect(function(err) {
         if (err) console.log("err");
-        console.log("Connected!");
+        console.log("Connected to mySQL!");
       });
     res.render('index')
 });
