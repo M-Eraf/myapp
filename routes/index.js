@@ -36,4 +36,10 @@ router.post('/about', function(req, res, next) {
 res.json({"Name":req.body})
 });
 
+router.get('/where', function(req, res, next) {
+  //   res.send('eraf');
+    console.log(req)
+    res.json({name:"eraf"})
+  });
+
 module.exports = router;
