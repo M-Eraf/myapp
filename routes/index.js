@@ -28,18 +28,18 @@ router.post('/about', function(req, res, next) {
         console.log(result);
 
       });
-      var sql1 = "select * from `form_details`"
-      con.query(sql1, function (err, result) {
-        if (err) throw err;
-        console.log(result);
-      });
+//       var sql1 = "select * from `form_details`"
+//       con.query(sql1, function (err, result) {
+//         if (err) throw err;
+//         console.log(result);
+//       });
 res.json({"Name":req.body})
 });
 
-router.get('/where', function(req, res, next) {
-  //   res.send('eraf');
-    console.log(req)
-    res.json({name:"eraf"})
-  });
+// router.get('/where', function(req, res, next) {
+//   //   res.send('eraf');
+//     console.log(req)
+//     res.json({name:"eraf"})
+//   });
 
 module.exports = router;
