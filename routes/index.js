@@ -40,4 +40,18 @@ router.get('/read', function (req, res) {
     });
   });
 });
-module.exports = router;
+
+  router.get('/delete', function (req, res) {
+    // res.send(req.params)
+  con.connect(function(err) {
+    // if (err) throw err;
+    var sql = 'DELETE FROM table_name WHERE id =4 ';
+    var id = [req.params];
+    con.query(sql, function (err, result) {
+      // if (err) throw err;
+      console.log("Number of records deleted: " + result.affectedRows);
+      res.redirect('/read')
+    });
+  });
+});
+module.exports = router;  
