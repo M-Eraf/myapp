@@ -41,12 +41,12 @@ router.get('/read', function (req, res) {
   });
 });
 router.get('/delete', function (req, res) {
-  res.send("to delete any data enter the id no. in url after delete")
+  res.render('delete')
 });
-  router.get('/delete/:d', function (req, res) {
+  router.post('/del', function (req, res) {
   con.connect(function(err) {
     // if (err) throw err;
-    var id = req.params.d;
+    var id = req.body.id;
     var sql = 'DELETE FROM table_name WHERE id = ?';
     con.query(sql,[id], function (err, result) {
       // if (err) throw err;
@@ -55,5 +55,40 @@ router.get('/delete', function (req, res) {
     });
   });
 });
+
+// router.get('/update', function (req, res) {
+//   res.render('update')
+// });
+// router.post('/edit', function(req, res, next){
+//   con.connect(function(err) {
+//     var id = req.body.id;
+//     var name = req.body.name;  
+//     var country = req.body.country;
+//     var age = req.body.age;
+//     var sql = `
+//     UPDATE table_name 
+//     SET name = ?, 
+//     country = ?, 
+//     age = ?, 
+//     WHERE id = ?"
+//     `;
+  
+//     con.query(sql,[id],[name],[country],[age], function(error, data){
+  
+//       if(error)
+//       {
+//         throw error;
+//       }
+//       else
+//       {
+//         console.log("Number of records updated: ");
+//         response.redirect('/read');
+//       }
+  
+//     });
+  
+//   });
+// });
+
 
 module.exports = router;  

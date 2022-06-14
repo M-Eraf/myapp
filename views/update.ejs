@@ -1,7 +1,9 @@
 <h1>welome</h1>
 <p>enter details</p>
 
-<form action="/about" method="post">
+<form action="/edit" method="post">
+  <label for="id">id:</label>
+    <input type="text" id="id" name="id"><br><br>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
     <label for="country">Country:</label>
@@ -10,16 +12,3 @@
     <input type="number" id="age" name="age"><br><br>
     <input type="submit" value="Post request">
   </form> 
-
-
-  <h1>READ</h1>
-
-<a href="/read/">click here to read the database</a>
-
-<h1>DELETE</h1>
-
-<a href="/delete/">click here to delete any data</a>
-
-<h1>UPDATE</h1>
-
-<a href="/update/">click here to update the database</a>
