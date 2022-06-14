@@ -22,13 +22,26 @@ router.post('/about', function(req, res, next) {
     console.log(req.body)
     var sql = "INSERT INTO `table_name` (`name`, `country`,`age`) \
     VALUES ('"+req.body.name+"', '"+req.body.country+"','"+req.body.age+"');"
-    console.log(sql)
+    // console.log(sql)
    con.connect()
       con.query(sql, function (err, result) {
         if (err) throw err;
         console.log(result);
+        res.json({"Name":req.body})
       });
-res.json({"Name":req.body})
 });
+
+router.get('/read', function (req, res) {
+  con.connect(function(err) {
+    // if (err) throw err;
+    con.query("SELECT * FROM table_name", function (err, result, fields) {
+      // if (err) throw err;
+      console.log(result);
+      res.send(JSON.stringify(result));
+    });
+  });
+});
+
+
 
 module.exports = router;
