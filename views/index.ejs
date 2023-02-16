@@ -1,25 +1,54 @@
-<h1>welome</h1>
-<p>enter details</p>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .main{
+    width: 300px;
+    box-shadow: #00000059 0px 5px 15px;
+    padding: 10px 20px;
+  }
+  .heading{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+</style>
 
-<form action="/about" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country"><br><br>
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age"><br><br>
-    <input type="submit" value="Post request">
-  </form> 
+<div class="container">
+  <div class="main">
+    <div class="heading">
+      <h1>WELCOME</h1>
+      <p>Enter Your Details</p>
+    </div>
+    <form action="/about" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country"><br><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age"><br><br>
+      <input type="submit" value="Post request">
+    </form>
 
 
-  <h1>READ</h1>
+    <h1>READ</h1>
 
-<a href="/read/">click here to read the database</a>
+    <a href="/read/">click here to read the database</a>
 
-<h1>DELETE</h1>
+    <h1>DELETE</h1>
 
-<a href="/delete/">click here to delete any data</a>
+    <a href="/delete/">click here to delete any data</a>
 
-<h1>UPDATE</h1>
+    <h1>UPDATE</h1>
 
-<a href="/update/">click here to update the database</a>
+    <a href="/update/">click here to update the database</a>
+  </div>
+</div>
